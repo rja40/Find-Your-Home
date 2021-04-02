@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: service-property
+  labels:
+    app: service-property
+    release: c756
+spec:
+  namespaceSelector:
+    matchNames:
+    - c756ns
+  selector:
+    matchLabels:
+      app: service-property
+  endpoints:
+  - port: http
+    path: /metrics

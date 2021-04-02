@@ -1,0 +1,94 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Resources": {
+      "tableUsers": {
+        "Type": "AWS::DynamoDB::Table",
+        "Properties": {
+          "TableName": "user_details-ZZ-REG-ID",
+          "AttributeDefinitions": [
+            {
+              "AttributeName": "user_id",
+              "AttributeType": "S"
+            }
+          ],
+          "KeySchema": [
+            {
+              "AttributeName": "user_id",
+              "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": "5",
+            "WriteCapacityUnits": "5"
+          }
+        }
+      },
+      "tableProperties": {
+        "Type": "AWS::DynamoDB::Table",
+        "Properties": {
+          "TableName": "property-ZZ-REG-ID",
+          "AttributeDefinitions": [
+            {
+              "AttributeName": "property_id",
+              "AttributeType": "S"
+            }
+          ],
+          "KeySchema": [
+            {
+              "AttributeName": "property_id",
+              "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": "5",
+            "WriteCapacityUnits": "5"
+          }
+        }
+      },
+	"tableServiceRequests": {
+        "Type": "AWS::DynamoDB::Table",
+        "Properties": {
+          "TableName": "service_requests-ZZ-REG-ID",
+          "AttributeDefinitions": [
+            {
+              "AttributeName": "property_id",
+              "AttributeType": "S"
+            }
+          ],
+          "KeySchema": [
+            {
+              "AttributeName": "property_id",
+              "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": "5",
+            "WriteCapacityUnits": "5"
+          }
+        }
+      },
+      "tableProperties": {
+        "Type": "AWS::DynamoDB::Table",
+        "Properties": {
+          "TableName": "city-ZZ-REG-ID",
+          "AttributeDefinitions": [
+            {
+              "AttributeName": "city_id",
+              "AttributeType": "S"
+            }
+          ],
+          "KeySchema": [
+            {
+              "AttributeName": "city_id",
+              "KeyType": "HASH"
+            }
+          ],
+          "ProvisionedThroughput": {
+            "ReadCapacityUnits": "5",
+            "WriteCapacityUnits": "5"
+          }
+        }
+      }
+    },
+    "Description": "DynamoDB tables for Team A"
+  }
